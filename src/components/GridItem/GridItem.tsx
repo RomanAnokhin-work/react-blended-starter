@@ -1,5 +1,14 @@
 import style from "./GridItem.module.css";
 
-export default function GridItem({ children }) {
-  return <li className={style.item}>{children}</li>;
+interface GridItemProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+}
+
+export default function GridItem({ children, onClick }: GridItemProps) {
+  return (
+    <li className={style.item} onClick={onClick}>
+      {children}
+    </li>
+  );
 }
