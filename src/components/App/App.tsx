@@ -17,9 +17,9 @@ export default function App() {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   const handleSubmit = async (query: string) => {
-    setIsLoading(true);
-    setIsError(false);
     try {
+      setIsLoading(true);
+      setIsError(false);
       const response = await getPhotos(query);
       setPhotos(response);
     } catch (error) {
